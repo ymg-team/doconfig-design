@@ -1,0 +1,44 @@
+@import colors 
+
+.homeconf
+    .title 
+        text-align: center 
+        font-size: 2em
+        margin: 0
+    .subtitle 
+        text-align: center 
+        color: $gray-medium
+
+.startconf 
+    margin-bottom: 4em
+    input[type='text']
+        width: 100%
+        font-size: 3em
+        padding: .2em
+        margin: 0 auto
+        color: $gray-medium
+        border: none 
+        border-bottom: .1em solid $gray-main
+        text-align: center
+        -webkit-transition: all 0.3s ease
+        -moz-transition: all 0.3s ease
+        -ms-transition: all 0.3s ease
+        &::-webkit-input-placeholder /* Chrome/Opera/Safari */
+            color: $gray-medium
+        &::-moz-placeholder /* Firefox 19+ */
+            color: $gray-medium
+        &:-ms-input-placeholder /* IE 10+ */
+            color: $gray-medium
+        &:-moz-placeholder /* Firefox 18- */
+            color: $gray-medium
+        &:focus 
+            outline: 0
+            font-size: 5em
+
+.availableconf, .wipconf
+    margin-bottom: 4em
+    text-align: center 
+    a.logo-partner 
+        margin: 0 1em
+        img 
+            height: 30px

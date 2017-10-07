@@ -3,3 +3,6 @@ DoConf web design created from pug, sass using boilerplate from https://github.c
 
 ## Demo 
 Please follow this link : https://doconf.netlify.com
+
+## DevStack
+- Css Grid : http://gridlex.devlint.fr/

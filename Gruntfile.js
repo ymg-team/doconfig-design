@@ -72,7 +72,7 @@ module.exports = grunt => {
           files: [{
               expand: true,
               cwd: 'src/',
-              src: ['img/**/*.{png,jpg,gif}'],
+              src: ['images/**/*.{png,jpg,gif}'],
               dest: 'dist'
           }]
       }
@@ -112,7 +112,7 @@ module.exports = grunt => {
         tasks: ['copy']
       },
       imagemin: {
-        files: ['src/img/**'],
+        files: ['src/images/**'],
         tasks: ['imagemin']
       }
     }

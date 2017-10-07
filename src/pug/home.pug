@@ -1,0 +1,31 @@
+extends layouts/default
+block title
+    title DoConfig - What you want to config ?
+
+block content
+    .container 
+        .grid.homeconf 
+            .col-10_xs-12(data-push-left="off-1_xs-0" data-push-right="off-1_xs-0")
+                section.startconf.grid 
+                    .col-12
+                        .startconf-editor 
+                            input(type="text" placeholder="Search libraries, CI, Services.." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search libraries, CI, Services..'")
+
+                section.availableconf.grid 
+                    .col-12
+                        h2.title Available Config
+                        p.subtitle Here are some configurations you can create in DoConfig
+
+                    .col-12 
+                        a.logo-partner(href="travici.com")
+                            img(src="images/logos/travisci.png")
+                        a.logo-partner(href="heroku.com")
+                            img(src="images/logos/heroku.png")
+
+                section.wipconf.grid 
+                    .col-12
+                        h2.title Config In Progress
+                        p.subtitle Get ready for the upcoming configurations on DoConfig
+                    .col-12 
+                        a.logo-partner(href="travici.com" target="_blank")
+                            img(src="images/logos/travisci.png")
