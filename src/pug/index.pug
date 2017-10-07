@@ -1,7 +1,59 @@
-extends layouts/default_layout 
+doctype html
+html(lang='en')
+    head
+        title Sebangsa Control Room Design
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        style.
+            body, html {
+                padding: 0;
+                margin: 0; 
+            }
 
-block title 
-    title App name 
+            nav, footer {
+                padding: 10px;
+                text-align: center; 
+                position: fixed;
+                width: calc(100% - 20px)
+            }
 
-block content 
-    .content content go here
+            nav {
+                background: #272727;
+                text-transform: uppercase;
+                font-weight: bold;
+                color: #FFF; 
+                top: 0;
+            }
+
+            footer {
+                background: #505050;
+                color: #FFF; 
+                bottom: 0;
+            }
+
+            .wrapper {
+                min-height: calc(100vh - 84px);
+                background: #f4f4f4;
+                color: lightgray;
+                text-align: center;
+                padding: 50px 0;
+            }
+
+            .wrapper a {
+                display: block;
+                color: gray;
+                text-transform: capitalize;
+                font-size: 1.5em;
+                text-decoration: none; 
+            }
+
+    body
+        nav Index of DoConf Website Design
+
+        .wrapper
+            h2 All Pages 
+            a(href="home.html") Home
+        footer 
+            small IdMore Team &lt;web@byidmore.com&gt;
+
