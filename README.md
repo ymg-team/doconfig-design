@@ -1,5 +1,5 @@
-# doconf-design
-DoConf web design created from pug, sass using boilerplate from https://github.com/yussan/grunt-pug-sass-boilerplate
+# DoConfig-design
+DoConfig web design created from pug, sass using boilerplate from https://github.com/yussan/grunt-pug-sass-boilerplate
 
 ## Demo 
 Please follow this link : https://doconfig.netlify.com

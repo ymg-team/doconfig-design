@@ -1,7 +1,15 @@
+@import _colors
+
 body, html 
     padding: 0
     margin: 0
     font-family: roboto, arial
+    color: $gray-dark
+a 
+    color: $gray-main 
+    text-decoration: none
+    &:hover 
+        text-decoration: underline
 
 @import ../css/gridlex
 @import _grid
@@ -9,3 +17,4 @@ body, html
 @import _conf
 @import _helper
 @import _buttons
+@import _responsive
