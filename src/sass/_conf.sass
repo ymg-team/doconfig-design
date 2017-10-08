@@ -10,30 +10,47 @@
         color: $gray-medium
 
 .startconf 
-    margin-bottom: 4em
+    background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%)
+    border-top: 1px solid $blue-dark
+    border-bottom: 1px solid $blue-dark
+    margin-bottom: 2em
+    padding: 4em 0
+    color: $white-main 
+    text-align: center
     input[type='text']
         width: 100%
         font-size: 3em
         padding: .2em
         margin: 0 auto
-        color: $gray-medium
+        color: $white-main
+        background: transparent
         border: none 
-        border-bottom: .1em solid $gray-main
+        border-bottom: 3px solid $white-main
         text-align: center
         -webkit-transition: all 0.3s ease
         -moz-transition: all 0.3s ease
         -ms-transition: all 0.3s ease
         &::-webkit-input-placeholder /* Chrome/Opera/Safari */
-            color: $gray-medium
+            color: $white-transparent
         &::-moz-placeholder /* Firefox 19+ */
-            color: $gray-medium
+            color: $white-transparent
         &:-ms-input-placeholder /* IE 10+ */
-            color: $gray-medium
+            color: $white-transparent
         &:-moz-placeholder /* Firefox 18- */
-            color: $gray-medium
+            color: $white-transparent
         &:focus 
             outline: 0
             font-size: 5em
+
+.startconfhelp
+    margin-bottom: 4em 
+    text-align: center
+    a 
+        color: $blue-medium
+        font-size: 1.5em 
+        display: inline-block 
+        margin-right: 1em
+        text-decoration: none
 
 .availableconf, .wipconf
     margin-bottom: 4em

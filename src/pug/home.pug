@@ -1,31 +1,49 @@
-extends layouts/default
+extends layouts/home
 block title
     title DoConfig - What you want to config ?
 
 block content
-    .container 
-        .grid.homeconf 
-            .col-10_xs-12(data-push-left="off-1_xs-0" data-push-right="off-1_xs-0")
-                section.startconf.grid 
-                    .col-12
+    .homeconf 
+        .startconf
+            .container
+                section.grid.header 
+                    .p-0.col-10_xs-12(data-push-left="off-1_xs-0" data-push-right="off-1_xs-0")
+                        a(href="/")
+                            img(src="images/logo-header-white.png")
+                section.grid
+                    .p-0.col-10_xs-12(data-push-left="off-1_xs-0" data-push-right="off-1_xs-0")
                         .startconf-editor 
+                            p What you want to config ?
                             input(type="text" placeholder="Search libraries, CI, Services.." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search libraries, CI, Services..'")
+                    .p-0.col-10_xs-12(data-push-left="off-1_xs-0" data-push-right="off-1_xs-0")
+        .container
+            section.grid.startconfhelp
+                .p-0.col-10_xs-12(data-push-left="off-1_xs-0" data-push-right="off-1_xs-0")
+                    a(href="") What is this
+                    a(href="") Getting Started 
+                    a(href="") Request Conf
+        .container 
+            section.availableconf.grid 
+                .col-12
+                    h2.title Available Config
+                    p.subtitle Here are some configurations you can create in DoConfig
 
-                section.availableconf.grid 
-                    .col-12
-                        h2.title Available Config
-                        p.subtitle Here are some configurations you can create in DoConfig
+                .col-12 
+                    a.logo-partner(href="travici.com")
+                        img(src="images/logos/travisci.png")
+                    a.logo-partner(href="heroku.com")
+                        img(src="images/logos/heroku.png")
 
-                    .col-12 
-                        a.logo-partner(href="travici.com")
-                            img(src="images/logos/travisci.png")
-                        a.logo-partner(href="heroku.com")
-                            img(src="images/logos/heroku.png")
+                .col-12 
+                    a.btn-more-conf.fa.fa-chevron-down(href="javascript:;")
 
-                section.wipconf.grid 
-                    .col-12
-                        h2.title Config In Progress
-                        p.subtitle Get ready for the upcoming configurations on DoConfig
-                    .col-12 
-                        a.logo-partner(href="travici.com" target="_blank")
-                            img(src="images/logos/travisci.png")
+            section.wipconf.grid 
+                .col-12
+                    h2.title Config In Progress
+                    p.subtitle Get ready for the upcoming configurations on DoConfig
+                .col-12 
+                    a.logo-partner(href="travici.com" target="_blank")
+                        img(src="images/logos/travisci.png")
+
+                .col-12 
+                    a.btn-more-conf.fa.fa-chevron-down(href="javascript:;")
