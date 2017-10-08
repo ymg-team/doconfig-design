@@ -1,0 +1,23 @@
+extends layouts/default
+block title
+    title Blog - DoConfig, Create Config in Seconds
+
+block content
+   .container.blog 
+        .grid
+            .col-12 
+                header
+                    h1 Blog
+                    h2 last updated : 24 Oct 2017 
+        .grid.blog-content     
+            .col-4.blog-list 
+                a(href="blog-detail.html") 
+                    img(src="images/image-1.jpg") 
+                a(href="blog-detail.html")
+                    h3 This is Title of Blog 
+                p Lorem ipsum semi dolor, hokya-hokya hae. Yuk semua ikutan bergiyang bersama kami...
+            .col-4 
+                | list
+            .col-4 
+                | list
+

@@ -1,6 +1,25 @@
+@import colors 
+
 .startconf > .header
     margin-bottom: 2em
-.header
+nav.header 
+    background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%)
+    border-bottom: 1px solid $blue-dark
+    text-align: left
+    padding: 10px 0
+    .logo 
+        float: left
+        margin-right: 1em
+        img 
+            width: 150px
+    ul.horizontal-list  
+        margin-top: .5em
+        li.active > a  
+            color: $white-transparent
+        a  
+            color: $white-main  
+            text-transform: capitalize
+.startconf .header
     padding: 30px 0
     text-align: center
 ul.horizontal-list 
