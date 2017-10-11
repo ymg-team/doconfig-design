@@ -10,14 +10,38 @@ block content
                     h1 Blog
                     h2 last updated : 24 Oct 2017 
         .grid.blog-content     
-            .col-4.blog-list 
-                a(href="blog-detail.html") 
-                    img(src="images/image-1.jpg") 
-                a(href="blog-detail.html")
-                    h3 This is Title of Blog 
-                p Lorem ipsum semi dolor, hokya-hokya hae. Yuk semua ikutan bergiyang bersama kami...
-            .col-4 
-                | list
-            .col-4 
-                | list
+            each n, key in [1,2,3]
+                .col-4_sm-12.blog-list 
+                    a(href="blog-detail.html") 
+                        img(src="images/thumb.png") 
+                    a(href="blog-detail.html")
+                        h3 This is Title of Blog 
+                    p.text-gray 
+                        span.fa.fa-user 
+                            a(href="#") yussan&nbsp
+                        | - 
+                        span.fa.fa-calendar-o 
+                            | 23 jan 2017
+                .col-4_sm-12.blog-list 
+                    a(href="blog-detail.html") 
+                        img(src="images/thumb.png") 
+                    a(href="blog-detail.html")
+                        h3 This is Title of Blog with super long title how can you handle it
+                    p.text-gray 
+                        span.fa.fa-user 
+                            a(href="#") yussan&nbsp
+                        | - 
+                        span.fa.fa-calendar-o 
+                            | 23 jan 2017
+                .col-4_sm-12.blog-list 
+                    a(href="blog-detail.html") 
+                        img(src="images/thumb.png") 
+                    a(href="blog-detail.html")
+                        h3 Lorem ipsum semi dolor hokya hakye iye iye iyah
+                    p.text-gray 
+                        span.fa.fa-user 
+                            a(href="#") yussan&nbsp
+                        | - 
+                        span.fa.fa-calendar-o 
+                            | 23 jan 2017
 

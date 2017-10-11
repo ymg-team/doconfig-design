@@ -4,7 +4,8 @@
     box-sizing: border-box;
     display: flex;
     flex-flow: row wrap;
-    margin: 0 -.5rem
+    margin: 0 -.5rem;
+    margin: 0;
 }
 
 [class*=col-],

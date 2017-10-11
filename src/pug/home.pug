@@ -3,6 +3,17 @@ block title
     title DoConfig - What you want to config ?
 
 block content
+    - 
+        let readyconf = [
+            {src: 'images/logos/travisci.png', href: 'travici.html'},
+            {src: 'images/logos/heroku.png', href: 'heroku.html'},
+            {src: 'images/logos/circleci.png', href: 'circleci.html'},
+            {src: 'images/logos/linux-makefile.png', href: 'linux-makefile.html'}
+        ]
+        let wipconf = [
+            {src: 'images/logos/jenkins.png', href: 'jenkins.html'},
+            {src: 'images/logos/docker.png', href: 'docker.html'}
+        ]
     .homeconf 
         .startconf
             .container
@@ -30,11 +41,9 @@ block content
                     p.subtitle Here are some configurations you can create in DoConfig
 
                 .col-12 
-                    a.logo-partner(href="travici.com")
-                        img(src="images/logos/travisci.png")
-                    a.logo-partner(href="heroku.com")
-                        img(src="images/logos/heroku.png")
-
+                    each n, key in readyconf
+                        a.logo-partner(href=n.href)
+                            img(src=n.src)
                 .col-12 
                     a.btn-more-conf.fa.fa-chevron-down(href="javascript:;")
 
@@ -43,8 +52,9 @@ block content
                     h2.title Config In Progress
                     p.subtitle Get ready for the upcoming configurations on DoConfig
                 .col-12 
-                    a.logo-partner(href="travici.com" target="_blank")
-                        img(src="images/logos/travisci.png")
+                    each n, key in wipconf
+                        a.logo-partner(href=n.href)
+                            img(src=n.src)
 
                 .col-12 
                     a.btn-more-conf.fa.fa-chevron-down(href="javascript:;")
