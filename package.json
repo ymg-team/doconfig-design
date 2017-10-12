@@ -7,7 +7,8 @@
     "start": "yarn dev:build",
     "prod:build": "rimraf dist && NODE_ENV=production grunt",
     "dev:build": "NODE_ENV=development grunt",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "git cz"
   },
   "repository": {
     "type": "git",
@@ -29,5 +30,9 @@
     "grunt-contrib-watch": "^1.0.0",
     "grunt-sass": "^2.0.0",
     "rimraf": "^2.6.2"
+  },
+  "devDependencies": {
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0"
   }
 }
