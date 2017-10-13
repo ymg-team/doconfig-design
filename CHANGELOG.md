@@ -4,10 +4,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 <a name="0.0.4"></a>
 ## 0.0.4 (2017-10-13)
-
-
-
-# Changelog
+- minor updates
 
 ## 0.0.3-stable
 - added copy libraries
