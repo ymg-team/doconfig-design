@@ -20,26 +20,25 @@ block content
                             .createconf-form-control
                                 label Images 
                                 input(type='text' placeholder='for example: ubuntu, nodejs-slim')
-                                small Images available in here, based on 
-                                    a(href="https://hub.docker.com/") Docker Hub
+                                small Images is based on 
+                                    a(href="https://hub.docker.com/" target="_blank") Docker Hub
 
-                            .createconf-form-control
+                            .createconf-form-control.commands-form-control
                                 label Command to execute 
                                 input(type='text' placeholder='for example: apt-get update -y')
 
                                 //- list setup command
-                                h3 Your Commands
-                                ul.horizontal-list.commands 
-                                    .commands 
+                                .commands.active
+                                    each n in ['apt-get update -y && apt-get autoremove -y', 'apt-get install -y supervisor', 'apt-get autoremove -y', 'build ./cfg/maxready', 'powerless infrared -p mask']
                                         .command
-                                            | apt-get update -y && apt-get autoremove -y
-                                            .command-btn 
-                                                button(type="button") x
-                                        .command
-                                            | apt-get install -y supervisor
-                                            .command-btn 
-                                                button(type="button") x
-                                        .command
-                                            | apt-get autoremove -y
-                                            .command-btn 
-                                                button(type="button") x
+                                            | #{n}
+                                small Make sure to write command in sequentially
+                            
+                            //- sample empty command 
+                            .createconf-form-control.commands-form-control
+                                label Command to execute (sample if empty)
+                                input(type='text' placeholder='for example: apt-get update -y')
+
+                                .commands.active
+                                small Make sure to write command in sequentially
+                                    

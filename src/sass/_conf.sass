@@ -86,3 +86,23 @@
             font-weight: normal
     .createconf-form 
 
+// commands
+.createconf-form
+    .createconf-form-control.commands-form-control
+        &:focus
+            .commands
+                border-bottom: 1.5px solid $blue-medium
+        input
+            border-bottom: none
+.commands
+    &.active 
+        border-bottom: 2px solid $blue-medium
+    border-bottom: 2px solid $gray-medium
+    .command 
+        display: inline-block
+        background: $blue-medium
+        color: $blue-super-dark
+        padding: .5em 
+        border-radius: .5em
+        margin-bottom: .3em
+
