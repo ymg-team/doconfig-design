@@ -13,32 +13,91 @@ block content
         include components/subheader-conf
 
         section
-            .container
+            .container-md
                 .grid
                     .col-12
                         .createconf-form 
+                            //- image
                             .createconf-form-control
-                                label Images 
+                                label IMAGE FROM 
                                 input(type='text' placeholder='for example: ubuntu, nodejs-slim')
-                                small Images is based on 
+                                small 
+                                    strong IMAGE&nbsp;
+                                    | is based on 
                                     a(href="https://hub.docker.com/" target="_blank") Docker Hub
 
+                            .createconf-form-control.readonly
+                                label IMAGE FROM (sample readonly)
+                                input(type='text' placeholder='for example: ubuntu, nodejs-slim')
+                                small 
+                                    strong IMAGE&nbsp;
+                                    | is based on 
+                                    a(href="https://hub.docker.com/" target="_blank") Docker Hub
+
+                            //- run
                             .createconf-form-control.commands-form-control
-                                label Command to execute 
+                                label RUN 
                                 input(type='text' placeholder='for example: apt-get update -y')
 
                                 //- list setup command
                                 .commands.active
                                     each n in ['apt-get update -y && apt-get autoremove -y', 'apt-get install -y supervisor', 'apt-get autoremove -y', 'build ./cfg/maxready', 'powerless infrared -p mask']
                                         .command
-                                            | #{n}
-                                small Make sure to write command in sequentially
+                                            | RUN: #{n}
+                                small 
+                                    strong RUN&nbsp;
+                                    | Actually runs a command and commits the result. Make sure to write command in sequentially.
                             
-                            //- sample empty command 
+                            //- sample empty run 
                             .createconf-form-control.commands-form-control
-                                label Command to execute (sample if empty)
+                                label RUN (sample if empty)
                                 input(type='text' placeholder='for example: apt-get update -y')
 
                                 .commands.active
+                                small
+                                    strong RUN&nbsp;
+                                    | Actually runs a command and commits the result. Make sure to write command in sequentially.
+
+                            //- copy
+                            .createconf-form-control
+                                label COPY
+                                .grid 
+                                    .col-6
+                                        p 
+                                            Source 
+                                        input(type='text' placeholder='example: /src/data') 
+                                    .col-6
+                                        p
+                                            Destination 
+                                        input(type='text' placeholder='example: /var/www/data')
+                                .commands
+                                    each n in ['"/dist" "/home/user/web"']
+                                        .command
+                                            | COPY: #{n}
                                 small Make sure to write command in sequentially
+
+                            //- CMD
+                            .createconf-form-control.commands-form-control
+                                label CMD 
+                                input(type='text' placeholder='for example: apt-get update -y')
+
+                                //- list setup command
+                                .commands.active
+                                    each n in ['apt-get update -y && apt-get autoremove -y', 'apt-get install -y supervisor', 'apt-get autoremove -y', 'build ./cfg/maxready', 'powerless infrared -p mask']
+                                        .command
+                                            | RUN: #{n}
+                                small 
+                                    strong RUN&nbsp;
+                                    | There can only be one 
+                                    strong CMD 
+                                    | instruction in a Dockerfile. If you list more than one 
+                                    strong CMD 
+                                    | then only the last 
+                                    strong CMD 
+                                    | will take effect.
+
+                //- generate button
+                .align-center
+                    button.btn.btn-lg.btn-white(type='button') Generate Dockerfile
+                    .m-sm
                                     
