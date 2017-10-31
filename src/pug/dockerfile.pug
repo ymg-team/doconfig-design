@@ -20,72 +20,58 @@ block content
                             //- image
                             .createconf-form-control
                                 label IMAGE FROM 
-                                input(type='text' placeholder='for example: ubuntu, nodejs-slim')
                                 small 
                                     strong IMAGE&nbsp;
                                     | is based on 
                                     a(href="https://hub.docker.com/" target="_blank") Docker Hub
-
-                            .createconf-form-control.readonly
-                                label IMAGE FROM (sample readonly)
                                 input(type='text' placeholder='for example: ubuntu, nodejs-slim')
-                                small 
-                                    strong IMAGE&nbsp;
-                                    | is based on 
-                                    a(href="https://hub.docker.com/" target="_blank") Docker Hub
 
                             //- run
-                            .createconf-form-control.commands-form-control
+                            .createconf-form-control
                                 label RUN 
-                                input(type='text' placeholder='for example: apt-get update -y')
-
-                                //- list setup command
-                                .commands.active
-                                    each n in ['apt-get update -y && apt-get autoremove -y', 'apt-get install -y supervisor', 'apt-get autoremove -y', 'build ./cfg/maxready', 'powerless infrared -p mask']
-                                        .command
-                                            | RUN: #{n}
                                 small 
                                     strong RUN&nbsp;
                                     | Actually runs a command and commits the result. Make sure to write command in sequentially.
                             
-                            //- sample empty run 
-                            .createconf-form-control.commands-form-control
-                                label RUN (sample if empty)
+                            
                                 input(type='text' placeholder='for example: apt-get update -y')
 
-                                .commands.active
+                                //- list setup command
+                                .commands
+                                    each n in ['apt-get update -y && apt-get autoremove -y', 'apt-get install -y supervisor', 'apt-get autoremove -y', 'build ./cfg/maxready', 'powerless infrared -p mask']
+                                        .command
+                                            | RUN: #{n}
+                            //- sample empty run 
+                            .createconf-form-control
+                                label RUN (sample if empty)
                                 small
                                     strong RUN&nbsp;
                                     | Actually runs a command and commits the result. Make sure to write command in sequentially.
+                                
+                                input(type='text' placeholder='for example: apt-get update -y')
+
+                                .commands
 
                             //- copy
                             .createconf-form-control
                                 label COPY
+                                small Make sure to write command in sequentially
+                                
                                 .grid 
-                                    .col-6
-                                        p 
-                                            Source 
+                                    .col-6.p-0.m-b-0
+                                        p.m-b-0 Source 
                                         input(type='text' placeholder='example: /src/data') 
-                                    .col-6
-                                        p
-                                            Destination 
+                                    .col-6.p-0.m-b-0
+                                        p.m-b-0 Destination 
                                         input(type='text' placeholder='example: /var/www/data')
                                 .commands
                                     each n in ['"/dist" "/home/user/web"']
-                                        .command
+                                        .command(title="click to delete")
                                             | COPY: #{n}
-                                small Make sure to write command in sequentially
 
                             //- CMD
                             .createconf-form-control.commands-form-control
                                 label CMD 
-                                input(type='text' placeholder='for example: apt-get update -y')
-
-                                //- list setup command
-                                .commands.active
-                                    each n in ['apt-get update -y && apt-get autoremove -y', 'apt-get install -y supervisor', 'apt-get autoremove -y', 'build ./cfg/maxready', 'powerless infrared -p mask']
-                                        .command
-                                            | RUN: #{n}
                                 small 
                                     strong RUN&nbsp;
                                     | There can only be one 
@@ -95,9 +81,17 @@ block content
                                     | then only the last 
                                     strong CMD 
                                     | will take effect.
+                                
+                                input(type='text' placeholder='for example: apt-get update -y')
+
+                                //- list setup command
+                                .commands.active
+                                    each n in ['/var/www/app/run.sh']
+                                        .command(title="click to delete")
+                                            | CMD: #{n}
 
                 //- generate button
                 .align-center
-                    button.btn.btn-lg.btn-white(type='button') Generate Dockerfile
+                    button.btn.btn-lg.btn-white(type='button' onclick="return location.href='dockerfile-submit.html'") Generate Dockerfile
                     .m-sm
                                     
