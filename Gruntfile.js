@@ -100,7 +100,7 @@ module.exports = grunt => {
         tasks: ['pug']
       },
       sass: {
-        files: ['src/sass/**/*.sass', 'src/css/**'],
+        files: ['src/sass/**', 'src/css/**'],
         tasks: ['sass']
       },
       js: {
