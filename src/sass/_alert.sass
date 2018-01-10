@@ -1,13 +1,21 @@
-@import colors
+@import _colors
 
 .alert
   position: fixed
   bottom: 0
   width: 100vw
   text-align: center
-  padding: 1em
+  transition: all .5s easy
   .alert-item
-      background: #1fc8db
-
+    padding: 1em
+    color: $white-main
+    background: $blue-soft
+    &.alert-error
+      background: $red-soft 
+    &.alert-info
+      background: $blue-soft
+    &.alert-warning 
+      backgrounfL $yellow-soft
+      
 
 

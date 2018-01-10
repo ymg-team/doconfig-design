@@ -35,11 +35,11 @@ module.exports = grunt => {
       }
     },
 
-    // uglify task (js minify)
-    uglify: {
-      my_target: {
+    // js babel transpiler
+    babel: {
+      dist: {
         files: {
-          'dist/js/app.min.js': ['src/js/app.js']
+          'dist/js/app.js': 'src/js/app.js'
         }
       }
     },
@@ -105,7 +105,7 @@ module.exports = grunt => {
       },
       js: {
         files: ['src/js/**/*.js'],
-        tasks: ['uglify']
+        tasks: ['babel']
       },
       copy: {
         files: ['src/libraries/**', 'fonts/*.*', '*.*'],
@@ -121,16 +121,16 @@ module.exports = grunt => {
   // initial
   grunt.loadNpmTasks('grunt-contrib-pug');
   grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-babel');
 
   //register default task
   if(process.env.NODE_ENV == 'production')
-    grunt.registerTask('default', ['pug', 'sass', 'uglify', 'copy', 'imagemin'])
+    grunt.registerTask('default', ['pug', 'sass', 'babel', 'copy', 'imagemin'])
   else
-    grunt.registerTask('default', ['pug', 'sass', 'uglify', 'copy', 'imagemin', 'browserSync', 'watch'])
+    grunt.registerTask('default', ['pug', 'sass', 'babel', 'copy', 'imagemin', 'browserSync', 'watch'])
 };
 
