@@ -2,11 +2,14 @@
 
 .alert
   position: fixed
-  bottom: 0
+  bottom: -6em
   width: 100vw
   text-align: center
-  transition: all .5s easy
+  transition: all .5s ease
+  &.active
+    bottom: 0
   .alert-item
+    cursor: pointer
     padding: 1em
     color: $white-main
     background: $blue-soft
@@ -14,6 +17,8 @@
       background: $red-soft 
     &.alert-info
       background: $blue-soft
+    &.alert-success
+      background: $green-soft
     &.alert-warning 
       backgrounfL $yellow-soft
       
