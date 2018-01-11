@@ -29,7 +29,9 @@ block content
                     .p-0.col-10_xs-12(data-push-left="off-1_xs-0" data-push-right="off-1_xs-0")
                         .startconf-editor
                             p What you want to config ?
-                            input(type="text" placeholder="Search libraries, CI, Services.." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search libraries, CI, Services..'")
+                            input#startconf-editor(type="text" placeholder="Search libraries, CI, Services.." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search libraries, CI, Services..'")
+                        .startconf-recomendation
+                            ul
                     .p-0.col-10_xs-12(data-push-left="off-1_xs-0" data-push-right="off-1_xs-0")
         .container
             section.grid.startconfhelp
@@ -64,4 +66,43 @@ block content
                     a.btn-more-conf.fa.fa-chevron-down(href="javascript:;")
 
     script.
-        console.log('masak')
+
+        const editor = document.getElementById('startconf-editor')
+        const recomendation = document.querySelector('.startconf-recomendation ul')
+        const recomendation_item = `<li><a href="">This is recomentaion of typed text</a></li>`
+        var timer
+        editor.addEventListener('keydown', (e) => {
+            clearTimeout(timer)
+            timer = setTimeout(() => {
+                if(e.target.value != '')
+                {
+                    var html = ''
+                    for(var n=0;n<6;n++)
+                    {
+                        html += recomendation_item
+                    }
+                    recomendation.innerHTML = html
+                    console.log('get recomendation of:', e.target.value)
+                }else
+                {
+                    recomendation.innerHTML = ''
+                }
+            }, 500)
+            if(e.target.value != '')
+            {
+                switch (e.keyCode)
+                {
+                    // press enter
+                    case 13:
+
+                        break;
+                    // up
+                    case 40:
+                        break;
+                    // down
+                    case 38:
+                        break;
+                }
+            }
+        })
+
