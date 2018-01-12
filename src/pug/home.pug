@@ -30,7 +30,7 @@ block content
                         .startconf-editor
                             p What you want to config ?
                             input#startconf-editor(type="text" placeholder="Search libraries, CI, Services.." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search libraries, CI, Services..'")
-                        .startconf-recomendation
+                        .startconf-recommendation
                             ul
                     .p-0.col-10_xs-12(data-push-left="off-1_xs-0" data-push-right="off-1_xs-0")
         .container
@@ -68,11 +68,36 @@ block content
 
     script.
 
-        const editor = document.getElementById('startconf-editor')
-        const recomendation = document.querySelector('.startconf-recomendation ul')
-        const recomendation_item = `<li><a href="">This is recomentaion of typed text</a></li>`
-        var timer, recomendation_active = 0
-        editor.addEventListener('keydown', (e) => {
+        const recommendation = document.querySelector('.startconf-recommendation ul')
+        const recommendation_item = `<li><a href="">This is recomentaion of typed text</a></li>`
+        var timer, recommendation_active = 0
+        
+        //- body event listener
+        document.getElementsByTagName('body')[0].addEventListener('keydown', (e) => {
+            console.log(e.keyCode)
+            //- on press up or down
+            switch(e.keyCode)
+            {
+                //- press down
+                case 40:
+                    if(recommendation_active > 0)
+                    {
+                        recommendation_active++
+                    }
+                    break;
+                //- press up
+                case 38:
+                    if(recommendation_active == 1)
+                    {
+                        document.getElementById('startconf-editor').active()
+                        recommendation_active--
+                    }
+                    break;
+            }
+        })
+
+        //- input search event listener
+        document.getElementById('startconf-editor').addEventListener('keydown', (e) => {
             clearTimeout(timer)
             timer = setTimeout(() => {
                 if(e.target.value != '')
@@ -80,12 +105,12 @@ block content
                     var html = ''
                     for(var n=0;n<6;n++)
                     {
-                        html += recomendation_item
+                        html += recommendation_item
                     }
-                    recomendation.innerHTML = html
+                    recommendation.innerHTML = html
                 }else
                 {
-                    recomendation.innerHTML = ''
+                    recommendation.innerHTML = ''
                 }
             }, 500)
             if(e.target.value != '')
@@ -95,13 +120,19 @@ block content
                     // press enter
                     case 13:
                         break;
-                    // up
-                    case 40:
-                        break;
                     // down
-                    case 38:
+                    case 40:
+                        // if start from input text
+                        if(!recommendation_active)
+                        {   
+                            // blur input text
+                            e.target.blur()
+                        }
+                        recommendation_active++
                         break;
                 }
             }
+
+            console.log('recommendation active', recommendation_active)
         })
 
