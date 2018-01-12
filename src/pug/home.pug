@@ -65,12 +65,15 @@ block content
                 .col-12 
                     a.btn-more-conf.fa.fa-chevron-down(href="javascript:;")
 
+        //the modal
+
+
     script.
 
         const editor = document.getElementById('startconf-editor')
         const recomendation = document.querySelector('.startconf-recomendation ul')
         const recomendation_item = `<li><a href="">This is recomentaion of typed text</a></li>`
-        var timer
+        var timer, recomendation_active = 0
         editor.addEventListener('keydown', (e) => {
             clearTimeout(timer)
             timer = setTimeout(() => {
@@ -82,7 +85,6 @@ block content
                         html += recomendation_item
                     }
                     recomendation.innerHTML = html
-                    console.log('get recomendation of:', e.target.value)
                 }else
                 {
                     recomendation.innerHTML = ''
@@ -94,7 +96,6 @@ block content
                 {
                     // press enter
                     case 13:
-
                         break;
                     // up
                     case 40:
