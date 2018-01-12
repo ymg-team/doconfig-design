@@ -1,0 +1,23 @@
+extends layouts/default
+block title
+    title Blog - DoConfig, Create Config in Seconds
+
+block content
+    .container.blog
+        .grid
+            .col-12
+                header
+                    h1 Request Conf
+                    h2 Feel free to make Doconfing the more complete and ready to use for everyone.
+
+        .grid
+            .col-6_sm-12
+                p Please describe what you want to request
+                form.form-dc(method="post" action="javascript:;")
+                    label(for="request.name") Conf name / short description, you can add link bellow too
+                    textarea(type="text" value="value" name="request.name")
+
+                    button.btn.btn-main(type="submit") Submit
+
+
+
