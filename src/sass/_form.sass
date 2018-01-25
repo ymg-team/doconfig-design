@@ -7,7 +7,7 @@
             font-size: 2em
             margin-bottom: 0.5em 
             display: block
-        input 
+        input
             padding: 1em 0
             width: -webkit-fill-available
             font-size: 1em
@@ -19,3 +19,27 @@
                 outline: 0
                 border-color: $blue-medium   
 
+form.form-dc
+  label
+    display: block
+    color: $gray-main
+    margin-bottom: .5em
+
+  input, textarea
+    border: 1px solid $gray-medium
+    display: block
+    width: calc(100% - 20px)
+    color: $gray-main
+    padding: 10px
+    font-size: 1em
+    margin-bottom: .5em
+
+.btn
+  font-size: .8em
+  font-weight: bold
+  cursor: pointer
+  padding: .5em .9em
+  &.btn-main
+    background: $blue-medium
+    color: $white-main
+    border: 1px solid $blue-dark
