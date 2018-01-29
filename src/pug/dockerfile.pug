@@ -18,13 +18,14 @@ block content
                     .col-12
                         .createconf-form 
                             //- image
-                            .createconf-form-control
+                            .createconf-form-control.error
                                 label IMAGE FROM
                                 small 
                                     strong IMAGE&nbsp;
                                     | is based on 
                                     a(href="https://hub.docker.com/" target="_blank") Docker Hub
                                 input(type='text' placeholder='for example: ubuntu, nodejs-slim')
+                                .error-message this is error message
 
                             //- run
                             .createconf-form-control

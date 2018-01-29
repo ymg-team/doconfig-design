@@ -1,6 +1,15 @@
 @import _colors
 
 .createconf-form 
+    .error 
+        color: $red-main
+        a, input::placeholder, textarea::placeholder, input, textarea, input:focus, textarea:focus   
+            color: $red-soft !important
+        input, textarea 
+            border-bottom-color: $red-main !important
+        .error-message 
+            font-size: .8em
+            margin-top: .5em
     .createconf-form-control
         margin-bottom: 2em
         label 
