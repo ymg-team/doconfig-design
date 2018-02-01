@@ -1,6 +1,6 @@
 @import _colors
 
-.createconf-form 
+.createconf-form
     .error 
         color: $red-main
         a, input::placeholder, textarea::placeholder, input, textarea, input:focus, textarea:focus   
@@ -12,6 +12,8 @@
             margin-top: .5em
     .createconf-form-control
         margin-bottom: 2em
+        small 
+            display: block
         label 
             font-size: 2em
             margin-bottom: 0.5em 
@@ -27,6 +29,18 @@
                 color: $blue-medium
                 outline: 0
                 border-color: $blue-medium   
+        select 
+            font-size: 1em
+            margin-top: .5em
+            background: #FFF
+            padding: 10px
+            -webkit-appearance: none
+            -moz-appearance: none
+            appearance: none
+            padding: .3em 1em
+            cursor: pointer
+            border: 1px solid $gray-main
+            border-radius: 0
 
 form.form-dc
   label

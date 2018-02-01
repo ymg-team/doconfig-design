@@ -4,7 +4,7 @@
   "description": "boilerplate of Pug Sass project using Grunt",
   "main": "index.js",
   "scripts": {
-    "start": "yarn dev:build",
+    "start": "yarn build:watch",
     "build:prod": "rimraf dist && NODE_ENV=production grunt",
     "build:watch": "NODE_ENV=development grunt",
     "test": "echo \"Error: no test specified\" && exit 1",

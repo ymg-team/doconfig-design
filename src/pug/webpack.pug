@@ -1,0 +1,112 @@
+extends layouts/default
+block title
+    title Create Config Webpack.config.js
+
+block content
+
+  .createconf 
+    - 
+        let title = 'Create config Heroku'
+        let description = 'Webpack is a module bundler. Its main purpose is to bundle JavaScript files for usage in a browser, yet it is also capable of transforming, bundling, or packaging just about any resource or asset. More about Webpack.'
+        let link_url = 'https://webpack.js.org/configuration/'
+        let link_text = 'Readmore about Webpack configuration'
+    include components/subheader-conf
+  
+  //- start form
+
+  section 
+    .container-md
+      .grid 
+        .col-12 
+          .createconf-form
+            //- entry file(s)
+            .createconf-form-control.error
+              label ENTRY FILE(S) *
+              small 
+                  strong You can input more than one file, write file path and press enter
+              input(type='text' placeholder='for example: ./src/index.js (and press enter)')
+              .error-message this is error message
+
+            //- output
+            .createconf-form-control
+              label OUTPUT *
+              small You can input more than one file, write file path and press enter
+              input(type='text' placeholder='for example: ./dist/bundle.js (and press enter)')
+
+            //- modules
+            .createconf-form-control
+              label MODULE
+
+            //- module - loaders
+            .createconf-form-control
+              small
+                  h2 Loaders 
+                  | What you want to build 
+              .m-t-20
+                select(style='margin-top:0')
+                  option -- Choose one
+                  option VueJS (.vue)
+                  option Ecma Script 2015 / ES6 (.js, .es6)
+                  option Ecma Script 2016 / ES7 (.js, .es6)
+                  option ReactJS (.js , .jsx)
+                
+                button(type='button' style="position:absolute;margin-left:1em").btn.btn-white +
+
+            //- resolve
+            .createconf-form-control
+              label RESOLVE
+            
+            //- resolve - alias
+            .createconf-form-control
+              small 
+                  h2 Alias
+                  strong Alias&nbsp;
+                  | Create aliases to import or require certain modules more easily. For example, to alias a bunch of commonly used src/ folders: 
+              input(type='text' placeholder='for example: module: /libraries/module.js (and press enter)')
+              .commands
+                each n in ['module: \'./libraries/module.js\'']
+                    .command
+                        | ALIAS: #{n}
+
+            //- plugins
+            .createconf-form-control
+              label PLUGINS
+
+            .createconf-form-control
+              small
+                  h2 Plugins 
+                  | A list of webpack plugins. For example, when multiple bundles share some of the same dependencies, the CommonsChunkPlugin could be useful to extract those dependencies into a shared bundle to avoid duplication.
+              //- default plugins
+              .m-t-20
+                select(style='margin-top:0')
+                  option CommonsChunkPlugin (avoid duplication)
+                button(type='button' style="position:absolute;margin-left:1em").btn.btn-white -
+              .m-t-20
+                select(style='margin-top:0')
+                  option UglifyJsPlugin (js minifier)
+                button(type='button' style="position:absolute;margin-left:1em").btn.btn-white -
+              
+              .m-t-20
+                select(style='margin-top:0')
+                  option CommonsChunkPlugin (avoid duplication)
+                  option UglifyJsPlugin (js minifier)
+                  option NoEmitOnErrorsPlugin (skip error while compiling)
+                button(type='button' style="position:absolute;margin-left:1em").btn.btn-white +
+
+              //- env
+              .createconf-form-control
+              small
+                h2 Env 
+                | Wanna set Env for Client
+                input(type='text' placeholder='for example: NODE_ENV: process.env.NODE_ENV')
+              .commands
+                each n in ['env: NODE_ENV: process.env.NODE_ENV']
+                    .command
+                        | ALIAS: #{n}
+
+            //- generate button
+            .align-center
+                button.btn.btn-lg.btn-white(type='button' onclick="return location.href='dockerfile-submit.html'") Generate Webpack.config.js
+                .m-sm
+
+  //- end of form
