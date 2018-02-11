@@ -1,0 +1,93 @@
+extends layouts/default
+block title
+    title Create Config Webpack.config.js
+
+block content
+
+  .createconf 
+    - 
+        let title = 'Create Config Nginx'
+        let description = 'NGINX is open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more. '
+        let link_url = 'https://www.nginx.com/resources/glossary/nginx/'
+        let link_text = 'Readmore about NGINX'
+    include components/subheader-conf
+  
+  //- start form
+
+  section 
+    .container-md
+      .grid 
+        .col-12 
+          .createconf-form
+            //- app type
+            .createconf-form-control.error
+              label TYPE APP TO SERVE
+              small Automatically the next input will match the type of application you want to build. 
+              select.fullwidth
+                option -- Choose one
+                option PHP - PHP FPM
+                option PHP - HHVM
+                option Node JS
+                option Python - UWSGI
+                option Domain
+              .error-message this is error message
+
+            //- logs
+            .createconf-form-control
+              label LOGS *
+              small Declare where you want to save logs.
+              br
+              label
+                input(type='checkbox')
+                | &nbsp;Use custom log
+              .disabled
+                .m-t-10
+                  strong Access Log
+                  input(type='text' value='/var/log/nginx/app.access.log' disabled)
+                .m-t-10
+                  strong Error Log
+                  input(type='text' value='/var/log/nginx/app.error.log' disabled)
+            
+            //- if domain
+            .createconf-form-control
+              label DOMAIN TARGET *
+              small Not all 
+                strong domain target
+                | &nbsp;can be targeted to nginx proxy_pass , depending on the policy.
+              input(type='text' placeholder='for example: https://domaintarget.com (and press enter)')
+            //- end if domain
+
+            //- if nodejs
+            //- resolve
+            .createconf-form-control
+              label PORT *
+              input(type='text' placeholder='for example: module: /libraries/module.js (and press enter)')
+            //- end if nodejs
+
+            //- if php
+            .createconf-form-control
+              label ROOT APP LOCATION *
+              input(type='text' placeholder='for example: /var/www/app/')
+            //- enf if php
+
+            //- custom location
+
+            //- dynamic input
+
+            //- end of dynamic input
+
+            //- end of custom location
+
+            //- server_name
+            .createconf-form-control
+              label DOMAIN / SERVER_NAME *
+              smnall Just write domain without http / https, or by default _
+              input(type='text' placeholder='for example: domain.com www.domain.com' value='_')
+
+            //- generate button
+            .align-center
+                button.btn.btn-lg.btn-white(type='button' onclick="return location.href='dockerfile-submit.html'") Generate Nginx.conf
+                button.btn.btn-lg.btn-white(type='button' onclick="return location.href='dockerfile-submit.html'" disabled) Save to Dashboard
+                .m-sm
+
+  //- end of form
