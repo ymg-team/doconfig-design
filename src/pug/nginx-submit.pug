@@ -1,0 +1,33 @@
+extends layouts/default
+block title
+    title Create Dockerfile - DoConfig, Create Config in Seconds
+
+block content
+    .createconf
+        //- subheader
+        - 
+            let title = 'Create nginx.conf'
+            let description = 'Docker can build images automatically by reading the instructions from a Dockerfile. A Dockerfile is a text document that contains all the commands a user could call on the command line to assemble an image. Using docker build users can create an automated build that executes several command-line instructions in succession.'
+            let link_url = 'https://docs.docker.com/engine/reference/builder/'
+            let link_text = 'More about Dockerfile'
+        include components/subheader-conf
+
+        section
+            .container-md
+                .grid
+                    .col-12.p-b-0
+                        .createconf-form 
+                            //- image
+                            .createconf-form-control
+                                label
+                                    a.fa.fa-chevron-left(style="margin-right:10px;font-size:28px" href="dockerfile.html" title="back to create Dockerfile") 
+                                    | nginx.conf Result
+                                code 
+                                  | sabar                                    
+
+                //- generate button
+                .align-center
+                    button.btn.btn-lg.btn-blue(type='button') Download
+                    button.btn.btn-lg.btn-white(type='button' onclick='dc.alert.open("success", "Dockerfile is copied to clipboard")') Copy to Clipboard
+                    .m-sm
+                                    
