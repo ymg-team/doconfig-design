@@ -78,6 +78,19 @@ module.exports = grunt => {
       }
     },
 
+    // minify css
+    cssmin: {
+      target: {
+        files: [{
+          expand: true, 
+          cwd: 'dist/css',
+          src: ['*.css'],
+          dest: 'dist/css',
+          ext: '.min.css'
+        }]
+      }
+    },
+
     // auto refresh view on change in dist directory
     browserSync: {
       dev: {
@@ -126,10 +139,11 @@ module.exports = grunt => {
   grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-babel');
+  grunt.loadNpmTasks('grunt-contrib-cssmin')
 
   //register default task
   if(process.env.NODE_ENV == 'production')
-    grunt.registerTask('default', ['pug', 'sass', 'babel', 'copy', 'imagemin'])
+    grunt.registerTask('default', ['pug', 'sass', 'babel', 'copy', 'imagemin', 'cssmin'])
   else
     grunt.registerTask('default', ['pug', 'sass', 'babel', 'copy', 'imagemin', 'browserSync', 'watch'])
 };
