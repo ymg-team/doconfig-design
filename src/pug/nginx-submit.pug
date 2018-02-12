@@ -22,12 +22,37 @@ block content
                                 label
                                     a.fa.fa-chevron-left(style="margin-right:10px;font-size:28px" href="dockerfile.html" title="back to create Dockerfile") 
                                     | nginx.conf Result
-                                code 
-                                  | sabar                                    
+                                pre
+                                    code                                    
+
+                //- attention
+                .grid 
+                    .col-12
+                        .attention
+                            h4 Attention
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse consectetur, sem in viverra varius, nisi nibh iaculis nunc, quis tincidunt elit est ut eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consectetur porttitor libero in dictum. In hac habitasse platea dictumst. Proin ac urna pellentesque risus rhoncus luctus. In ultricies et mi in cursus. Ut vel auctor nibh. Cras vel velit interdum nisi tincidunt placerat. Vestibulum sit amet tincidunt ligula. Pellentesque odio tortor, varius ut augue at, ullamcorper consequat nulla. Quisque sodales dictum interdum.
+                            p Vivamus rutrum vitae magna sed tristique. Fusce interdum aliquet lobortis. Fusce sit amet dui placerat dui blandit luctus. Etiam ultrices quis ligula ac accumsan. Curabitur at ligula sed purus placerat venenatis. Fusce rhoncus ultrices nisi eget porta. Fusce molestie ipsum in tortor placerat, eu fermentum lectus gravida. Aenean egestas lacus lorem, et facilisis neque fermentum vel. Sed a auctor massa. Praesent congue urna neque, id imperdiet quam lobortis vitae. Mauris id nunc sapien.            
 
                 //- generate button
                 .align-center
                     button.btn.btn-lg.btn-blue(type='button') Download
                     button.btn.btn-lg.btn-white(type='button' onclick='dc.alert.open("success", "Dockerfile is copied to clipboard")') Copy to Clipboard
                     .m-sm
-                                    
+        script.
+            const text_nginxconf = `
+            http {
+                    server {
+                        listen 80;\n
+                        servername domain.com www.domain.com;
+                        
+                        access_log /var/log/app.access.log;
+                        error_log /var/log/app.error.log;
+
+                        location ~ \.php$ {
+                            fastcgi_pass   127.0.0.1:1025;
+                        }
+                    }
+                }
+            `
+            document.getElementsByTagName('code')[0].appendChild(document.createTextNode(text_nginxconf))// text_nginxconf.replace(/\n/g, '<br/>')
+            console.log('nginx.conf is ready')

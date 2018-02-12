@@ -59,6 +59,9 @@
             a:hover
                 text-decoration: none
 
+.startconf-attention
+    border 
+
 
 .startconfhelp
     margin-bottom: 8em 
@@ -102,7 +105,7 @@
     header
         h2 
             font-weight: normal
-    code 
+    code, .attention 
         display: block 
         line-height: 1.5 
         border: 1px solid $gray-medium 
@@ -110,6 +113,14 @@
         color: $gray-medium
         font-family: roboto
         padding: 1em
+    .attention
+        h4 
+            margin: 0
+        p:last-child
+            margin-bottom: 0
+        font-size: .8em
+        height: 200px
+        overflow-x: hidden
     
 // commands    
 .commands
